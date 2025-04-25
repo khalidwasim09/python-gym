@@ -1,6 +1,6 @@
 import random 
 def get_computer_choice(): 
-    choices = ["rock", "paper", "scissor"]
+    choices = ["rock", "paper", "scissors"]
     return random.choice(choices)
 
 users_choice = input("Enter your choice: ").lower() 
@@ -11,40 +11,26 @@ print(f"Computer's Choice: {computers_choice}")
 if users_choice == computers_choice:
     print("DRAW") 
     
-    # Rock, Paper, Scissors game
+elif users_choice == "rock": 
+    if computers_choice == "scissors": 
+        print("You win! Rock cruhses scissors")
+    else: 
+        print("You lose! Paper covers rock")
+        
+elif users_choice == "paper": 
+    if computers_choice == "rock": 
+        print("You win! Paper covers rock") 
+    else: 
+        print("You lose! Scissors cut paper") 
 
-# User's choice
-user_choice = input("Choose rock, paper, or scissors: ").lower()
-
-# Computer's choice
-computer_choice = random.choice(["rock", "paper", "scissors"])
-
-print(f"Computer chooses: {computer_choice}")
-
-# Logic to determine the outcome
-if user_choice == "rock":
-    if computer_choice == "scissors":
-        print("You win!")
-    elif computer_choice == "paper":
-        print("You lose!")
-    else:
-        print("It's a tie!")
-
-elif user_choice == "paper":
-    if computer_choice == "rock":
-        print("You win!")
-    elif computer_choice == "scissors":
-        print("You lose!")
-    else:
-        print("It's a tie!")
-
-elif user_choice == "scissors":
-    if computer_choice == "paper":
-        print("You win!")
-    elif computer_choice == "rock":
-        print("You lose!")
-    else:
-        print("It's a tie!")
+elif users_choice == "scissors": 
+    if computers_choice == "rock": 
+        print("You lose! Rock breaks scissors")
+    else: 
+        print("You win! Scissors cut paper")
 
 else:
-    print("Invalid choice!")
+    print("Invalid input. Please enter rock, paper, or scissors.")
+
+        
+        
