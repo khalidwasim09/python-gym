@@ -1,10 +1,20 @@
 import random 
-random_integer = random.randint( 1, 100)
+secret_number = random.randint(1,1000000)
+attempts = 0 
+
 while True: 
-    user_input = input("Guess the number") 
-    if user_input == random_integer: 
-        print("Congratulations")
-    if user_input < 1: 
-        print("Too low! Choose between 1 and 100")
-    if user_input > 100: 
-        print("Too high! Choose between 1 and 100")
+    try: 
+        user_input = int (input("Guess the number (1-100): "))
+        attempts += 1 
+        
+        if user_input < 1 or user_input > 1000000: 
+            print("Please guess a number between 1 and 100")
+        elif user_input < secret_number: 
+            print("Too low")
+        elif user_input > secret_number: 
+            print("Too high") 
+        else: 
+            print(f"Congratulations! You guesssed it in {attempts} tries")
+    except ValueError: 
+        print("Invalid input! Please enter a number")
+        
